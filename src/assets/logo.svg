@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="526.10992mm"
+   height="150mm"
+   viewBox="0 0 526.10992 150"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="/home/cjdenio/Documents/slack-frames/src/assets/logo.png"
+   inkscape:export-xdpi="58.853073"
+   inkscape:export-ydpi="58.853073">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     fit-margin-bottom="30"
+     fit-margin-right="30"
+     fit-margin-left="30"
+     fit-margin-top="30"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.2567925"
+     inkscape:cx="558.82694"
+     inkscape:cy="390.24616"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1847"
+     inkscape:window-height="1016"
+     inkscape:window-x="73"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(108.52108,-21.965878)"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       id="text838"
+       y="115.2486"
+       x="84.513405"
+       style="font-style:normal;font-weight:normal;font-size:52.9167px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.9167px;font-family:Assistant;-inkscape-font-specification:'Assistant Bold';stroke-width:0.264583;fill:#ffffff;fill-opacity:1;"
+         y="115.2486"
+         x="84.513405"
+         id="tspan836"
+         sodipodi:role="line">Slack Frames</tspan></text>
+    <g
+       id="g845">
+      <rect
+         ry="10"
+         y="37.999397"
+         x="-141.96588"
+         height="20"
+         width="90"
+         id="rect853"
+         style="fill:#2eb67d;fill-opacity:1;stroke:none;stroke-width:13.0522;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <rect
+         ry="10"
+         y="51.965878"
+         x="-78.52108"
+         height="20"
+         width="136.52048"
+         id="rect847"
+         style="fill:#36c5f0;fill-opacity:1;stroke:none;stroke-width:16.0755;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         transform="rotate(-90)"
+         style="fill:#e01e5a;fill-opacity:1;stroke:none;stroke-width:13.0522;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect849"
+         width="90"
+         height="20"
+         x="-141.96588"
+         y="-78.52108"
+         ry="10" />
+      <rect
+         style="fill:#ecb22e;fill-opacity:1;stroke:none;stroke-width:16.0755;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect851"
+         width="136.52048"
+         height="20"
+         x="-78.52108"
+         y="121.96588"
+         ry="10" />
+      <rect
+         transform="rotate(-90)"
+         style="fill:#2eb67d;fill-opacity:1;stroke:none;stroke-width:10.2792;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect855"
+         width="55.819935"
+         height="20"
+         x="-141.96588"
+         y="37.999397"
+         ry="10" />
+    </g>
+  </g>
+</svg>
