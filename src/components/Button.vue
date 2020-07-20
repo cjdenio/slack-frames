@@ -11,8 +11,8 @@ export default {
         this.$router.push(this.to);
       }
       this.$emit("click", e);
-    },
-  },
+    }
+  }
 };
 </script>
 

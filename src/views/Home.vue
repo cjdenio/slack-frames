@@ -7,7 +7,7 @@
           borderRadius: '10px',
           boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.2)',
           textAlign: 'center',
-          padding: '30px',
+          padding: '30px'
         }"
       >
         <img class="logo" src="../assets/logo.png" />
@@ -17,7 +17,10 @@
             <h2>Welcome, {{ name }}!</h2>
             <FrmButton to="/about" icon="arrow-right">Let's go</FrmButton>
           </div>
-          <a href="/api/login" v-if="authed === false"
+          <a
+            href="/api/login"
+            v-if="authed === false"
+            :style="{ marginTop: '30px', display: 'inline-block' }"
             ><img
               alt="Sign in with Slack"
               height="40"
@@ -42,12 +45,12 @@ import axios from "axios";
 export default {
   name: "Home",
   components: {
-    Loader,
+    Loader
   },
   data: () => ({
     loaded: false,
     authed: null,
-    name: "",
+    name: ""
   }),
   async created() {
     try {
@@ -59,7 +62,7 @@ export default {
       this.loaded = true;
       this.authed = false;
     }
-  },
+  }
 };
 </script>
 

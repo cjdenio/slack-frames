@@ -8,7 +8,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/about",
@@ -18,13 +18,13 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: function() {
       return import(/* webpackChunkName: "about" */ "../views/About.vue");
-    },
-  },
+    }
+  }
 ];
 
 const router = new VueRouter({
   routes,
-  mode: "abstract",
+  mode: "abstract"
 });
 
 router.replace("/");
