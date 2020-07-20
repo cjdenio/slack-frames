@@ -15,7 +15,7 @@
           <Loader v-if="!loaded" />
           <div v-if="loaded && authed">
             <h2>Welcome, {{ name }}!</h2>
-            <FrmButton icon="arrow-right">Let's go</FrmButton>
+            <FrmButton to="/about" icon="arrow-right">Let's go</FrmButton>
           </div>
           <a href="/api/login" v-if="authed === false"
             ><img

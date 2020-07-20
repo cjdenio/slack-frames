@@ -1,6 +1,20 @@
 <template>
-  <button class="btn"><slot /></button>
+  <button class="btn" @click="click"><slot /></button>
 </template>
+
+<script>
+export default {
+  props: ["to", "icon"],
+  methods: {
+    click(e) {
+      if (this.to) {
+        this.$router.push(this.to);
+      }
+      this.$emit("click", e);
+    },
+  },
+};
+</script>
 
 <style scoped>
 .btn {
