@@ -4,10 +4,8 @@ import (
 	"fmt"
 	"image"
 	"image/draw"
-	"image/jpeg"
 	"image/png"
 	"io"
-	"io/ioutil"
 	"log"
 	"mime/multipart"
 	"os"
@@ -57,11 +55,11 @@ func Generate(res http.ResponseWriter, req *http.Request) {
 
 	//io.Copy(res, frame.Body)
 
-	profileImg, err := jpeg.Decode(avatar.Body)
+	profileImg, _, err := image.Decode(avatar.Body)
 	if err != nil {
 		fmt.Println("profileerr " + err.Error())
 	}
-	frameImg, err := png.Decode(frame.Body)
+	frameImg, _, err := image.Decode(frame.Body)
 	if err != nil {
 		fmt.Println("frameerr " + err.Error())
 	}
@@ -72,34 +70,32 @@ func Generate(res http.ResponseWriter, req *http.Request) {
 	draw.Draw(finalImg, profileImg.Bounds(), profileImg, image.Point{}, draw.Over)
 	draw.Draw(finalImg, profileImg.Bounds(), frameImg, image.Point{}, draw.Over)
 
-	res.Header().Add("Content-type", "image/png")
-
 	r, w := io.Pipe()
 	body := multipart.NewWriter(w)
-	textW, _ := body.CreateFormField("moo")
 
-	textW.Write([]byte("moo"))
+	go func() {
+		textW, _ := body.CreateFormField("moo")
 
-	//imageW, _ := body.CreateFormFile("image", "image")
+		textW.Write([]byte("moo"))
 
-	//err = png.Encode(imageW, finalImg)
-	err = body.Close()
-	if err != nil {
-		fmt.Println(err)
-	}
-	w.Close()
+		imageW, _ := body.CreateFormFile("image", "image")
 
-	read, _ := ioutil.ReadAll(r)
-	fmt.Println(string(read))
+		err = png.Encode(imageW, finalImg)
+		if err != nil {
+			fmt.Println(err)
+		}
+		body.WriteField("token", slackToken.(string))
+		err = body.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+		w.Close()
+	}()
 
-	// resp, err := http.Post("https://slack.com/api/users.setPhoto", "multipart/form-data", r)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// }
-
-	// stuff, _ := ioutil.ReadAll(resp.Body)
-
-	// fmt.Println(string(stuff))
+	request, _ := http.NewRequest(http.MethodPost, "https://slack.com/api/users.setPhoto", r)
+	request.Header.Add("Content-Type", body.FormDataContentType())
+	client := &http.Client{}
+	client.Do(request)
 
 	res.Write(nil)
 }
