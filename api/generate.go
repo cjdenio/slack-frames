@@ -20,6 +20,13 @@ import (
 
 // Generate generates the magic image
 func Generate(res http.ResponseWriter, req *http.Request) {
+	defer func() {
+		if err := recover(); err != nil {
+			res.WriteHeader(http.StatusInternalServerError)
+			res.Write([]byte("<cries in internal server error>"))
+		}
+	}()
+
 	store := sessions.NewCookieStore([]byte(os.Getenv("SESSION_KEY")))
 	session, _ := store.Get(req, "session")
 	slackToken := session.Values["token"]
@@ -48,12 +55,6 @@ func Generate(res http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 		return
 	}
-
-	fmt.Println(userProfile.ImageOriginal)
-
-	res.Header().Add("Content-type", "image/png")
-
-	//io.Copy(res, frame.Body)
 
 	profileImg, _, err := image.Decode(avatar.Body)
 	if err != nil {
@@ -85,6 +86,7 @@ func Generate(res http.ResponseWriter, req *http.Request) {
 			fmt.Println(err)
 		}
 		body.WriteField("token", slackToken.(string))
+
 		err = body.Close()
 		if err != nil {
 			fmt.Println(err)
